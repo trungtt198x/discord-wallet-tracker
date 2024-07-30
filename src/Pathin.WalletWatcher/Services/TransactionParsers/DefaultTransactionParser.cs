@@ -21,7 +21,7 @@ public class DefaultTransactionParser : ITransactionParser
     {
         var web3 = new Web3(evmEndpointConfig.RpcUrl);
         var transactionDisplayInfo = new TransactionDisplayInfo(
-            $"New {walletConfig.Name} Transaction",
+            $"New {walletConfig.Name} transaction on {evmEndpointConfig.Name}",
             new List<TransactionInfo>(),
             evmEndpointConfig.ExplorerUrl != null ? string.Format(evmEndpointConfig.ExplorerUrl, transaction.TransactionHash) : null,
             Web3.Convert.FromWei(receipt.GasUsed.Value * transaction.GasPrice.Value),

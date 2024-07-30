@@ -70,7 +70,7 @@ public class Erc20TransactionParser : ITransactionParser
         }
 
         var transactionDisplayInfo = new TransactionDisplayInfo(
-            $"New {walletConfig.Name} Transaction",
+            $"New {walletConfig.Name} transaction on {evmEndpointConfig.Name}",
             new List<TransactionInfo>(),
             evmEndpointConfig.ExplorerUrl != null ? string.Format(evmEndpointConfig.ExplorerUrl, transaction.TransactionHash) : null,
             Web3.Convert.FromWei(receipt.GasUsed.Value * transaction.GasPrice.Value),
